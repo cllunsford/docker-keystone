@@ -6,7 +6,7 @@ RUN apt-get install -y git-core python-dev python-setuptools python-pip
 RUN apt-get install -y libxml2-dev libxslt-dev lib32z1-dev
 
 WORKDIR /opt
-RUN git clone https://github.com/openstack/keystone.git
+RUN git clone --branch 2014.1 https://github.com/openstack/keystone.git
 WORKDIR /opt/keystone
 
 RUN pip install -r requirements.txt
