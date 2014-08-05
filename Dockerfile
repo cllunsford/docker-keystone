@@ -1,8 +1,6 @@
-FROM ubuntu:trusty
+FROM cllunsford/osbase
 MAINTAINER Chris Lunsford <cllunsford@gmail.com>
 
-RUN apt-get update
-RUN apt-get install -y git-core python-dev python-setuptools python-pip
 RUN apt-get install -y libxml2-dev libxslt-dev lib32z1-dev
 
 WORKDIR /opt
