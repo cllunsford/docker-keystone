@@ -1,15 +1,9 @@
-FROM ubuntu:trusty
+FROM cllunsford/osbase
 MAINTAINER Chris Lunsford <cllunsford@gmail.com>
 
-RUN apt-get update
-RUN apt-get install -y wget git-core python-dev python-setuptools python-pip
 RUN apt-get install -y libxml2-dev libxslt-dev lib32z1-dev
 
 WORKDIR /opt
-RUN wget -O confd_0.3.0_linux_amd64.tar.gz https://github.com/kelseyhightower/confd/releases/download/v0.3.0/confd_0.3.0_linux_amd64.tar.gz
-RUN tar -zxvf confd_0.3.0_linux_amd64.tar.gz
-RUN cp confd /usr/local/bin
-
 RUN git clone https://github.com/openstack/keystone.git
 WORKDIR /opt/keystone
 
